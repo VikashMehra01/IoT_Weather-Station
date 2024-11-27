@@ -1,38 +1,47 @@
-.App {
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.weather-station {
+  padding: 0 20px;
+  height: 100vh;
+  font-family: Arial, sans-serif;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #f4f4f4;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-image: url("https://images.unsplash.com/photo-1501536563292-5d56009a5942?q=80&w=1829&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 }
 
-.App-link {
-  color: #61dafb;
+.weather-station h1 {
+  margin-bottom: 20px;
+  color: #ffffff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-data {
+  display: flex; /* Enables Flexbox */
+  flex-wrap: wrap; /* Allows wrapping to the next row */
+  gap: 20px; /* Space between divs */
+}
+
+.data-item {
+  background: #ffffff00;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  padding: 0 10px 5px 10px;
+}
+.data-item iframe {
+  border: none;
+  border-radius: 10px;
+}
+
+.data-item h3 {
+  margin-bottom: 5px;
+  color: #c9ffc5;
 }
