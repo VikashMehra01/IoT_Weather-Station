@@ -94,7 +94,7 @@ const WeatherStation = () => {
           ></iframe>
         </div>
         <div className="data-item">
-          <h3>UV Index in mW/cm²</h3>
+          <h3>UV Intensity in mW/cm²</h3>
           <iframe
             width={450}
             height={250}
