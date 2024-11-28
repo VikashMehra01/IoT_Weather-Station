@@ -50,7 +50,7 @@ const WeatherStation = () => {
       <h1>Weather Station {temperature ? temperature : "N/A"} °C</h1>
       <div className="weather-data">
         <div className="data-item">
-          <h3>Temperature</h3>
+          <h3>Temperature °C</h3>
           <iframe
             width={450}
             height={250}
@@ -59,7 +59,7 @@ const WeatherStation = () => {
           ></iframe>
         </div>
         <div className="data-item">
-          <h3>Humidity</h3>
+          <h3>Humidity %</h3>
           <iframe
             width={450}
             height={250}
@@ -67,7 +67,7 @@ const WeatherStation = () => {
           />
         </div>
         <div className="data-item">
-          <h3>Pressure</h3>
+          <h3>Pressure in atm</h3>
           <iframe
             width={450}
             height={250}
@@ -76,7 +76,7 @@ const WeatherStation = () => {
           ></iframe>
         </div>
         <div className="data-item">
-          <h3>Wind Speed</h3>
+          <h3>Wind Speed km/h</h3>
           <iframe
             width={450}
             height={250}
@@ -85,16 +85,16 @@ const WeatherStation = () => {
           ></iframe>
         </div>
         <div className="data-item">
-          <h3>Rain</h3>
+          <h3>Rain in mm/hr</h3>
           <iframe
             width={450}
             height={250}
             style={{ border: " 1px solid #cccccc" }}
-            src="https://thingspeak.com/channels/2764736/widgets/978855"
+            src="https://thingspeak.com/channels/2764736/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
           ></iframe>
         </div>
         <div className="data-item">
-          <h3>UV Index</h3>
+          <h3>UV Index in mW/cm²</h3>
           <iframe
             width={450}
             height={250}
