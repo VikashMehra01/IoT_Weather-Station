@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# 🌦️ IoT-Based Weather Station (ESP32 + React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An end-to-end smart weather station using the **ESP32** microcontroller and a **React.js** dashboard to measure and display real-time environmental data. The system integrates multiple sensors and sends live weather updates wirelessly to a web interface.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- 🌡️ Temperature monitoring (DHT11/DHT22)
+- 💧 Humidity sensing
+- 🌬️ Wind speed & direction measurement (Anemometer & Wind Vane)
+- 🌧️ Rainfall detection (Rain Gauge / Raindrop sensor)
+- 📈 Atmospheric pressure sensing (BMP180/BMP280)
+- 📡 Wireless data transmission over Wi-Fi using ESP32
+- 📊 Real-time web dashboard built with React.js
 
-### `npm start`
+## 🔧 Hardware Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **ESP32 Dev Board**
+- **DHT11 / DHT22** – Temperature and Humidity Sensor
+- **BMP180 / BMP280** – Barometric Pressure Sensor
+- **Rain Sensor** – Raindrop Detection Module or Tipping Bucket Rain Gauge
+- **Anemometer** – Wind Speed Sensor
+- **Wind Vane** – Wind Direction Sensor
+- **Jumper wires, breadboard, resistors**, and supporting hardware
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧰 Software Stack
 
-### `npm test`
+- **Firmware**: Arduino IDE for ESP32
+- **Frontend**: React.js (bootstrapped with Create React App)
+- **Communication**: Wi-Fi (HTTP or WebSocket)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⚙️ How It Works
 
-### `npm run build`
+1. ESP32 reads data from the connected sensors at fixed intervals.
+2. Data is sent over Wi-Fi to a server or directly to the frontend dashboard.
+3. The React dashboard displays live sensor readings in a clean UI.
+4. System can optionally log historical data or raise alerts for abnormal weather events.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### ESP32 Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Open `Tinkering.ino` in Arduino IDE.
+- Install required libraries:
+  - `DHT sensor library by Adafruit`
+  - `Adafruit BMP085 Unified`
+  - `WiFi` (comes with ESP32 board)
+- Connect sensors to the correct ESP32 GPIO pins.
+- Replace placeholders with your Wi-Fi SSID and password in the sketch.
+- Upload the code to your ESP32 board.
 
-### `npm run eject`
+### React App Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone https://github.com/your-username/iot-weather-station.git
+cd iot-weather-station
+npm install
+npm start
+```
+Open your browser and go to http://localhost:3000 to see live updates.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+📌 Notes
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    Sensor values update every few seconds as defined in the firmware.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    Dashboard can be expanded to support graphs, logs, and alerts.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    Wi-Fi credentials and server IP must be hardcoded or configured via OTA updates.
